@@ -33,6 +33,5 @@ if __name__ == "__main__":
         newRankB = R(rankB, rankA, scoreB)
 
         print "Ea %.2f, Eb %.2f" % (E(rankA, rankB), E(rankB, rankA))
-
         print "A rank: %.2f -> %.2f" % (rankA, newRankA)
         print "B rank: %.2f -> %.2f" % (rankB, newRankB)
