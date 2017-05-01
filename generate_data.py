@@ -12,8 +12,8 @@ def find_between(string, from_str, to_str):
 
 # 解析后的数据
 parsed_league = {}
-parsed_team = {}
-parsed_game = []
+parsed_teams = {}
+parsed_games = []
 
 # 解析联赛数据
 file_data = open("s36.js").readlines()
@@ -25,7 +25,7 @@ parsed_league['name'] = data_league[1]
 data_teams_str = find_between(file_data[1], '[', ']')
 data_teams = eval(data_teams_str)
 for team in data_teams:
-    parsed_team[team[0]] = {"name": team[1], "eng": team[3]}
+    parsed_teams[team[0]] = {"name": team[1], "eng": team[3]}
 
 x = 0
 # 解析赛事数据
@@ -55,7 +55,7 @@ for i in range(2, 2 + 38):
                     "second_half_score_host": second_half_score_host,
                     "second_half_score_guest": second_half_score_guest,
                     "round": idx + 1, "result": result}
-            parsed_game.append(data)
+            parsed_games.append(data)
             
 # 展示所有数据
 
@@ -64,7 +64,7 @@ print "league: "
 pp.pprint(parsed_league)
 print "***************"
 print "team: "
-pp.pprint(parsed_team)
+pp.pprint(parsed_teams)
 print "***************"
 print "games: "
-pp.pprint(parsed_game)
+pp.pprint(parsed_games)
