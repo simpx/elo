@@ -19,7 +19,6 @@ def R(oldRankA, oldRankB, scoreA, k = 32, base = 10, power = 400):
     e = E(oldRankA, oldRankB, base, power)
     return oldRankA + k * (scoreA - e)
 
-
 if __name__ == "__main__":
     if len(sys.argv) < 4:
         print "usage: %s rankA rankB scoreA" % sys.argv[0]
