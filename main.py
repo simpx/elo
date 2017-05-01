@@ -2,6 +2,7 @@
 # -*- coding: utf8 -*-
 import pprint
 import elo
+import operator
 
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -105,3 +106,8 @@ for game in parsed_games:
                                                 host_score, guest_score,
                                                 guest_name, guest_old_rank,
                                                 host_new_rank, guest_new_rank)
+
+print "-----------------------------"
+sorted_ranks = sorted(ranks.items(), key=operator.itemgetter(1), reverse=True)
+for rank in sorted_ranks:
+    print "%s (%.2f)" % (team_name(rank[0]), rank[1])
