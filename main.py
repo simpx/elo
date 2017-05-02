@@ -138,3 +138,9 @@ for game in left_games:
             team_name(game['host_id']), get_rank(game['host_id']),
             team_name(game['guest_id']), get_rank(game['guest_id']),
             100 * elo.E(get_rank(game['host_id']), get_rank(game['guest_id'])))
+
+
+print "-----------------------------"
+print "United vs City: "
+# 27 vs 26
+
